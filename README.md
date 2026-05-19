@@ -1,2 +1,18 @@
-# 30-days-c-game-dev
-🎮 30 Days of C Game Development Challenge — a beginner-friendly journey building real games like Guessing Game, Rock Paper Scissors, Tic Tac Toe, and Snake Game using C programming.
+# 30 Days C Game Development Challenge 🎮
+
+This project documents my 30-day journey learning C programming by building games.
+
+## Games Built:
+- Number Guessing Game
+- Calculator
+- Rock Paper Scissors
+- Tic Tac Toe
+- Snake Game (Final Project)
+
+## Goal:
+To improve problem-solving, logic building, and C programming skills through game development.
+
+## Tools:
+- C Language
+- GCC Compiler
+- VS Code
