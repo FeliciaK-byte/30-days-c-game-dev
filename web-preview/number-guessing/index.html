@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Number Guessing Game Preview</title>
+    <link rel="stylesheet" href="styles.css?v=login-save">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="game-header" aria-labelledby="game-title">
+            <div>
+                <p class="eyebrow">C game preview</p>
+                <h1 id="game-title">Number Guessing Game</h1>
+            </div>
+            <img class="number-art" src="assets/number-tile.svg" alt="" aria-hidden="true">
+        </section>
+
+        <section id="login-view" class="details-panel" aria-labelledby="login-title">
+            <div class="details-heading">
+                <p class="eyebrow">Player setup</p>
+                <h2 id="login-title">Login details</h2>
+            </div>
+
+            <form id="login-form" class="details-form" autocomplete="on" novalidate>
+                <label class="field">
+                    <span>Player name</span>
+                    <input id="player-name" name="name" type="text" maxlength="32" placeholder="Player" required>
+                </label>
+
+                <label class="field">
+                    <span>Email</span>
+                    <input id="player-email" name="email" type="email" maxlength="80" placeholder="name@example.com">
+                </label>
+
+                <label class="switch-row">
+                    <input id="login-save-toggle" type="checkbox">
+                    <span class="switch-track" aria-hidden="true"></span>
+                    <span>Save data on this device</span>
+                    <strong id="login-save-label">Off</strong>
+                </label>
+
+                <div class="details-actions">
+                    <button type="submit">Start game</button>
+                    <button id="guest-button" class="ghost" type="button">Continue as guest</button>
+                </div>
+            </form>
+        </section>
+
+        <div id="game-view" class="game-grid hidden">
+            <section class="play-surface" aria-label="Game board">
+                <div class="mode-panel" aria-label="Difficulty">
+                    <button class="mode-button active" type="button" data-difficulty="easy">
+                        <span>Easy</span>
+                        <small>1-50</small>
+                    </button>
+                    <button class="mode-button" type="button" data-difficulty="normal">
+                        <span>Normal</span>
+                        <small>1-100</small>
+                    </button>
+                    <button class="mode-button" type="button" data-difficulty="hard">
+                        <span>Hard</span>
+                        <small>1-500</small>
+                    </button>
+                </div>
+
+                <label class="switch-row">
+                    <input id="limited-toggle" type="checkbox" checked>
+                    <span class="switch-track" aria-hidden="true"></span>
+                    <span>Limited attempts</span>
+                    <strong id="limit-label">8</strong>
+                </label>
+
+                <div class="range-panel">
+                    <div class="range-labels">
+                        <span id="min-label">1</span>
+                        <span id="bounds-label">Current range: 1-50</span>
+                        <span id="max-label">50</span>
+                    </div>
+                    <div class="range-track" aria-hidden="true">
+                        <div id="range-window" class="range-window"></div>
+                        <div id="guess-marker" class="guess-marker"></div>
+                    </div>
+                </div>
+
+                <form id="guess-form" class="guess-form" autocomplete="off" novalidate>
+                    <label for="guess-input">Your guess</label>
+                    <div class="input-row">
+                        <input
+                            id="guess-input"
+                            name="guess"
+                            type="number"
+                            min="1"
+                            max="50"
+                            inputmode="numeric"
+                            placeholder="1-50"
+                            required
+                        >
+                        <button id="guess-button" type="submit">Guess</button>
+                    </div>
+                </form>
+
+                <p id="message" class="message neutral" role="status" aria-live="polite">
+                    Pick a number from 1 to 50.
+                </p>
+
+                <section id="round-summary" class="round-summary hidden" aria-label="Round summary">
+                    <div>
+                        <h2 id="summary-title">Round summary</h2>
+                        <p id="summary-copy"></p>
+                    </div>
+                    <button id="summary-next" class="secondary" type="button">Next round</button>
+                </section>
+
+                <div class="actions" aria-label="Round controls">
+                    <button id="new-round" class="secondary" type="button">New round</button>
+                    <button id="reset-stats" class="ghost" type="button">Reset stats</button>
+                </div>
+            </section>
+
+            <aside class="session-panel" aria-label="Session details">
+                <section class="player-panel" aria-label="Player details">
+                    <div class="player-row">
+                        <span>Player</span>
+                        <strong id="player-name-value">Guest</strong>
+                    </div>
+                    <div class="player-row">
+                        <span>Email</span>
+                        <strong id="player-email-value">-</strong>
+                    </div>
+                    <label class="switch-row compact-switch">
+                        <input id="save-data-toggle" type="checkbox">
+                        <span class="switch-track" aria-hidden="true"></span>
+                        <span>Save data</span>
+                        <strong id="save-status-value">Off</strong>
+                    </label>
+                    <div class="data-actions">
+                        <button id="save-now" class="secondary" type="button">Save data</button>
+                        <button id="edit-details" class="ghost" type="button">Edit details</button>
+                        <button id="clear-data" class="ghost" type="button">Clear data</button>
+                    </div>
+                </section>
+
+                <section class="stats-panel" aria-label="Session stats">
+                    <div class="stat-row">
+                        <span>Attempts</span>
+                        <strong id="attempts-value">0</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Remaining</span>
+                        <strong id="remaining-value">8</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Rounds won</span>
+                        <strong id="rounds-value">0</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Best score</span>
+                        <strong id="best-value">-</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Total played</span>
+                        <strong id="total-value">0</strong>
+                    </div>
+                </section>
+
+                <section class="history-panel" aria-label="Guess history">
+                    <h2>Guesses</h2>
+                    <ol id="history-list" class="history-list"></ol>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <script src="game.js?v=login-save"></script>
+</body>
+</html>

@@ -6,25 +6,42 @@ This project documents a 30-day journey learning C programming by building games
 
 - Number Guessing Game
 
+## Project Structure
+
+```text
+games/
+  number-guessing/
+    number_guessing_game.c
+web-preview/
+  index.html
+  number-guessing/
+    index.html
+    game.js
+    styles.css
+    assets/
+```
+
 ## Run the C Game
 
 Compile the game:
 
 ```sh
-gcc number_guessing-game.c -o number_guessing-game
+gcc games/number-guessing/number_guessing_game.c -o games/number-guessing/number_guessing_game
 ```
 
 Run it:
 
 ```sh
-./number_guessing-game
+./games/number-guessing/number_guessing_game
 ```
 
 On Windows, run:
 
 ```powershell
-.\number_guessing-game.exe
+.\games\number-guessing\number_guessing_game.exe
 ```
+
+The C game saves persistent stats to `number_guessing_stats.txt` in the directory where you run it.
 
 ## Web Preview
 
@@ -34,7 +51,7 @@ A browser version of the Number Guessing Game is available at:
 web-preview/index.html
 ```
 
-Open that file in a browser to play the preview. It mirrors the C game range, guess validation, high/low feedback, rounds won, and best score tracking.
+The preview includes a login details screen, an explicit save-data option, difficulty modes, optional limited attempts, browser stats, warmer/colder hints, and round summaries.
 
 ## Planned Games
 
@@ -51,4 +68,5 @@ Improve problem-solving, logic building, and C programming skills through game d
 
 - C Language
 - GCC or Clang
+- HTML, CSS, and JavaScript
 - VS Code

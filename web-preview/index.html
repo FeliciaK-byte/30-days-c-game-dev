@@ -4,83 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Number Guessing Game Preview</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="refresh" content="0; url=number-guessing/index.html">
+    <link rel="canonical" href="number-guessing/index.html">
 </head>
 <body>
-    <main class="app-shell">
-        <section class="game-header" aria-labelledby="game-title">
-            <div>
-                <p class="eyebrow">C game preview</p>
-                <h1 id="game-title">Number Guessing Game</h1>
-            </div>
-            <img class="number-art" src="assets/number-tile.svg" alt="" aria-hidden="true">
-        </section>
-
-        <div class="game-grid">
-            <section class="play-surface" aria-label="Game board">
-                <div class="range-panel">
-                    <div class="range-labels">
-                        <span id="min-label">1</span>
-                        <span id="bounds-label">Current range: 1-100</span>
-                        <span id="max-label">100</span>
-                    </div>
-                    <div class="range-track" aria-hidden="true">
-                        <div id="range-window" class="range-window"></div>
-                        <div id="guess-marker" class="guess-marker"></div>
-                    </div>
-                </div>
-
-                <form id="guess-form" class="guess-form" autocomplete="off" novalidate>
-                    <label for="guess-input">Your guess</label>
-                    <div class="input-row">
-                        <input
-                            id="guess-input"
-                            name="guess"
-                            type="number"
-                            min="1"
-                            max="100"
-                            inputmode="numeric"
-                            placeholder="1-100"
-                            required
-                        >
-                        <button id="guess-button" type="submit">Guess</button>
-                    </div>
-                </form>
-
-                <p id="message" class="message neutral" role="status" aria-live="polite">
-                    Pick a number from 1 to 100.
-                </p>
-
-                <div class="actions" aria-label="Round controls">
-                    <button id="new-round" class="secondary" type="button">New round</button>
-                    <button id="reset-stats" class="ghost" type="button">Reset stats</button>
-                </div>
-            </section>
-
-            <aside class="session-panel" aria-label="Session details">
-                <section class="stats-panel" aria-label="Session stats">
-                    <div class="stat-row">
-                        <span>Attempts</span>
-                        <strong id="attempts-value">0</strong>
-                    </div>
-                    <div class="stat-row">
-                        <span>Rounds won</span>
-                        <strong id="rounds-value">0</strong>
-                    </div>
-                    <div class="stat-row">
-                        <span>Best score</span>
-                        <strong id="best-value">-</strong>
-                    </div>
-                </section>
-
-                <section class="history-panel" aria-label="Guess history">
-                    <h2>Guesses</h2>
-                    <ol id="history-list" class="history-list"></ol>
-                </section>
-            </aside>
-        </div>
+    <main>
+        <p><a href="number-guessing/index.html">Open Number Guessing Game</a></p>
     </main>
-
-    <script src="game.js"></script>
+    <script>
+        location.replace("number-guessing/index.html");
+    </script>
 </body>
 </html>
