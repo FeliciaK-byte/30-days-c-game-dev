@@ -1,6 +1,6 @@
 # 30 Days  Game Development Challenge
 
-This project documents a 30-day journey learning C programming by building games.
+This project documents a 30-day journey learning languages by building games.
 
 ## Current Game
 
